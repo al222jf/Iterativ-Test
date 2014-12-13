@@ -1,0 +1,6 @@
+P:\Git\Iterativ-Test\Testkod\Testkod\bin\Debug\Testkod.exe.config
+P:\Git\Iterativ-Test\Testkod\Testkod\bin\Debug\Testkod.exe
+P:\Git\Iterativ-Test\Testkod\Testkod\bin\Debug\Testkod.pdb
+P:\Git\Iterativ-Test\Testkod\Testkod\obj\Debug\Testkod.csprojResolveAssemblyReference.cache
+P:\Git\Iterativ-Test\Testkod\Testkod\obj\Debug\Testkod.exe
+P:\Git\Iterativ-Test\Testkod\Testkod\obj\Debug\Testkod.pdb
