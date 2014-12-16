@@ -18,27 +18,15 @@ namespace Testkod
             
             Console.Write("Antal domare/jury: ");
             quantityOfPoints = int.Parse(Console.ReadLine());
-
-            Console.WriteLine(quantityOfPoints);
-
-            
-            getPoints a = new getPoints(quantityOfPoints);
+ 
+            GetPoints a = new GetPoints(quantityOfPoints);
             arr = a.savePoints();
 
-            avrage b = new avrage();
+            Avrage b = new Avrage();
             avragePoints = b.processAvrage(arr);
 
-            saveToTeam c = new saveToTeam();
+            SaveToTeam c = new SaveToTeam();
             c.save(avragePoints);
-
-
-
-
-
-
-
-         
-                
 
         }
     }

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Testkod
 {
-    class avrage
+    class Avrage
     {
 
-        public avrage()
+        public Avrage()
         {
             
         }

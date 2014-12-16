@@ -41,11 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="avrage.cs" />
-    <Compile Include="getPoints.cs" />
+    <Compile Include="Avrage.cs" />
+    <Compile Include="GetPoints.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="saveToTeam.cs" />
+    <Compile Include="SaveToTeam.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

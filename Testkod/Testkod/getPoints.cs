@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Testkod
 {
-    class getPoints
+    class GetPoints
     {
         int _quantityOfPoints;
         
         int[] pointsArr; 
 
-        public getPoints(int numberOfPoints)
+        public GetPoints(int numberOfPoints)
         {
             getQuantity = numberOfPoints;
 

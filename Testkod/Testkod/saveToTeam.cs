@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Testkod
 {
-    class saveToTeam
+    class SaveToTeam
     {
         List<double> teamSave = new List<double>();
-        public saveToTeam()
+        public SaveToTeam()
         {
 
         }
