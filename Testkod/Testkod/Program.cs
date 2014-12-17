@@ -10,23 +10,31 @@ namespace Testkod
     {
         static void Main(string[] args)
         {
-            //Poängsättning för ett lag och en gren
+            ////Poängsättning för ett lag och en gren
 
-            int quantityOfPoints;
-            int[] arr;
-            double avragePoints;
+            //int quantityOfPoints;
+            //int[] arr;
+            //double averagePoints;
+            //int zero = 0;
             
-            Console.Write("Antal domare/jury: ");
-            quantityOfPoints = int.Parse(Console.ReadLine());
+            //Console.Write("Antal domare/jury: ");
+            //quantityOfPoints = int.Parse(Console.ReadLine());
  
-            GetPoints a = new GetPoints(quantityOfPoints);
-            arr = a.savePoints();
+            //GetPoints a = new GetPoints(quantityOfPoints);
+            //GetPoints a = new GetPoints();
+            //arr = a.SavePoints();
 
-            Avrage b = new Avrage();
-            avragePoints = b.processAvrage(arr);
+            //Average b = new Average();
+            
+            //averagePoints = b.ProcessAverage(arr);
 
-            SaveToTeam c = new SaveToTeam();
-            c.save(avragePoints);
+            //SaveToTeam c = new SaveToTeam();
+            //c.save(averagePoints);
+
+            Test.TestQuantity();
+            Test.TestPoints();
+            Test.TestArray();
+            
 
         }
     }

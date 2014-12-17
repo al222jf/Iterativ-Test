@@ -9,25 +9,30 @@ namespace Testkod
     class GetPoints
     {
         int _quantityOfPoints;
-        
-        int[] pointsArr; 
 
-        public GetPoints(int numberOfPoints)
+
+        public GetPoints()
         {
-            getQuantity = numberOfPoints;
 
         }
 
+        public GetPoints(int numberOfPoints)
+        {
+            GetQuantity = numberOfPoints;
 
+        }
 
-        public int getQuantity
+        public int GetQuantity
         {
             get { return _quantityOfPoints; }
             set
             {
                 if (value < 1)
                 {
-                    throw new ArgumentException("Måste vara minst en dommare!");
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("Måste vara minst en dommare!");
+                    Console.ResetColor();
                 }
                 _quantityOfPoints = value;
             }
@@ -35,34 +40,30 @@ namespace Testkod
 
 
 
-        public int[] savePoints()
+        public int[] SavePoints(int points)
         {
-            int points;
-            pointsArr = new int[_quantityOfPoints];
-            for (int i = 0; i < _quantityOfPoints; i++)
+
+            int [] pointsArr = new int[_quantityOfPoints];
+            if (points > 0)
             {
-                while (true)
+                for (int i = 0; i < _quantityOfPoints; i++)
                 {
                     Console.Write("Poäng {0}: ", i + 1);
                     points = int.Parse(Console.ReadLine());
 
-                    if (points > 0)
-                    {
-                        pointsArr[i] = points;
-                        break;
-                    }
-                    else
-                    {
-                        Console.BackgroundColor = ConsoleColor.Red;
-                        Console.ForegroundColor = ConsoleColor.White;
-                        Console.WriteLine("{0} är inte större än 0", points);
-                        Console.ResetColor();
-                    }
+                    Console.WriteLine("Hej");
+                    pointsArr[i] = points;
+                    break;
                 }
-                
+            }
+            else
+            {
+                Console.BackgroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("{0} är inte större än 0", points);
+                Console.ResetColor();
             }
             return pointsArr;
         }
     }
-
 }

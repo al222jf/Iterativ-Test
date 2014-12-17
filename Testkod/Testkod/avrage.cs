@@ -6,27 +6,41 @@ using System.Threading.Tasks;
 
 namespace Testkod
 {
-    class Avrage
+    class Average
     {
 
-        public Avrage()
+        public Average()
         {
             
         }
 
-        public double processAvrage(int[] pointsArray)
+        public double ProcessAverage(int[] pointsArray)
         {
+            double result;
+            double averageArray = 0;
             //Läser ut avrage
-
-            double result = 0;
-
-            for (int i = 0; i < pointsArray.Length; i++)
+            if (pointsArray.Length > 0)
             {
-                result += pointsArray[i];
-            }
-            double avrageArray = result / pointsArray.Length;
+                result = 0;
 
-            return avrageArray;
+                for (int i = 0; i < pointsArray.Length; i++)
+                {
+                    result += pointsArray[i];
+                }
+                averageArray = result / pointsArray.Length;
+
+                return averageArray;
+            }
+            else
+            {
+                Console.BackgroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Det finns inga poäng");
+                Console.ResetColor();
+                return averageArray;
+            }
+
+            
         }
     }
 }
