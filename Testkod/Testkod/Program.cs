@@ -31,9 +31,10 @@ namespace Testkod
             //SaveToTeam c = new SaveToTeam();
             //c.save(averagePoints);
 
-            Test.TestQuantity();
-            Test.TestPoints();
+            //Test.TestQuantity();
+            //Test.TestPoints();
             Test.TestArray();
+            //Test.TestIntegration();
             
 
         }

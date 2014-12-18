@@ -8,12 +8,22 @@ namespace Testkod
 {
     class GetPoints
     {
-        int _quantityOfPoints;
+        private int _quantityOfPoints;
+        private int[] _pointsArray;
 
 
         public GetPoints()
         {
 
+        }
+
+        public int[] PointsArray 
+        {
+            get { return _pointsArray; }
+            set
+            {
+                _pointsArray = value;
+            }
         }
 
         public GetPoints(int numberOfPoints)
@@ -29,10 +39,7 @@ namespace Testkod
             {
                 if (value < 1)
                 {
-                    Console.BackgroundColor = ConsoleColor.Red;
-                    Console.ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine("Måste vara minst en dommare!");
-                    Console.ResetColor();
+                    throw new ArgumentException("Måste vara minst en dommare!");
                 }
                 _quantityOfPoints = value;
             }
@@ -40,30 +47,25 @@ namespace Testkod
 
 
 
-        public int[] SavePoints(int points)
+        public void SavePoints(int points)
         {
 
-            int [] pointsArr = new int[_quantityOfPoints];
-            if (points > 0)
+            _pointsArray = new int[_quantityOfPoints];
+            if (_pointsArray.Length > 0)
             {
                 for (int i = 0; i < _quantityOfPoints; i++)
                 {
-                    Console.Write("Poäng {0}: ", i + 1);
-                    points = int.Parse(Console.ReadLine());
+                    //Console.Write("Poäng {0}: ", i + 1);
+                    //points = int.Parse(Console.ReadLine());
 
-                    Console.WriteLine("Hej");
-                    pointsArr[i] = points;
-                    break;
+
+
+                    _pointsArray[i] = 0;
+
+
                 }
             }
-            else
-            {
-                Console.BackgroundColor = ConsoleColor.Red;
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("{0} är inte större än 0", points);
-                Console.ResetColor();
-            }
-            return pointsArr;
+            throw new ArgumentException("Poängen måste vara mer än noll");
         }
     }
 }

@@ -49,9 +49,35 @@ namespace Testkod
         public static void TestArray()
         {
             int[] emptyArray = new int[0];
-            var array = new Average();
+            var array = new GetPoints();
 
-            array.ProcessAverage(emptyArray);
+            try
+            {
+                array.PointsArray = emptyArray;
+            }
+            catch (ArgumentException err)
+            {
+                Console.WriteLine(err.Message);
+            }
         }
+
+        public static void TestIntegration()
+        {
+            GetPoints a = new GetPoints();
+            Average b = new Average();
+            a.PointsArray = new int[] {0};
+
+            try
+            {
+                b.ProcessAverage(a);
+
+            }
+            catch (ArgumentException err)
+            {
+                Console.WriteLine(err.Message);
+            }
+            
+        }
+
     }
 }

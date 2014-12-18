@@ -4,3 +4,9 @@ P:\Git\Iterativ-Test\Testkod\Testkod\bin\Debug\Testkod.pdb
 P:\Git\Iterativ-Test\Testkod\Testkod\obj\Debug\Testkod.csprojResolveAssemblyReference.cache
 P:\Git\Iterativ-Test\Testkod\Testkod\obj\Debug\Testkod.exe
 P:\Git\Iterativ-Test\Testkod\Testkod\obj\Debug\Testkod.pdb
+C:\Users\al222jf.LNU\Downloads\git\Iterativ-Test\Testkod\Testkod\bin\Debug\Testkod.exe.config
+C:\Users\al222jf.LNU\Downloads\git\Iterativ-Test\Testkod\Testkod\obj\Debug\Testkod.exe
+C:\Users\al222jf.LNU\Downloads\git\Iterativ-Test\Testkod\Testkod\obj\Debug\Testkod.pdb
+C:\Users\al222jf.LNU\Downloads\git\Iterativ-Test\Testkod\Testkod\bin\Debug\Testkod.exe
+C:\Users\al222jf.LNU\Downloads\git\Iterativ-Test\Testkod\Testkod\bin\Debug\Testkod.pdb
+C:\Users\al222jf.LNU\Downloads\git\Iterativ-Test\Testkod\Testkod\obj\Debug\Testkod.csprojResolveAssemblyReference.cache

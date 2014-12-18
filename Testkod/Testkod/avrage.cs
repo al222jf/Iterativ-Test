@@ -14,30 +14,37 @@ namespace Testkod
             
         }
 
-        public double ProcessAverage(int[] pointsArray)
+        
+
+        public double ProcessAverage(GetPoints gp)
         {
+
             double result;
             double averageArray = 0;
             //Läser ut avrage
-            if (pointsArray.Length > 0)
+            if (gp.PointsArray.Length > 0)
             {
-                result = 0;
+                    result = 0;
 
-                for (int i = 0; i < pointsArray.Length; i++)
-                {
-                    result += pointsArray[i];
-                }
-                averageArray = result / pointsArray.Length;
+                    for (int i = 0; i < gp.PointsArray.Length; i++)
+                    {
+                        if (gp.PointsArray[i] > 0)
+                        {
+                            result += gp.PointsArray[i];
+                        }
+                        else
+                        {
+                            throw new ArgumentException("Poängen är mindre än ett!");
+                        }
+                        
+                    }
+                    averageArray = result / gp.PointsArray.Length;
 
-                return averageArray;
+                    return averageArray;
             }
             else
             {
-                Console.BackgroundColor = ConsoleColor.Red;
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("Det finns inga poäng");
-                Console.ResetColor();
-                return averageArray;
+                throw new ArgumentException("Det finns inga poäng");
             }
 
             
