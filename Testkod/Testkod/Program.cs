@@ -28,14 +28,15 @@ namespace Testkod
             
             //averagePoints = b.ProcessAverage(arr);
 
-            //SaveToTeam c = new SaveToTeam();
-            //c.save(averagePoints);
-
-            //Test.TestQuantity();
-            //Test.TestPoints();
-            Test.TestArray();
-            //Test.TestIntegration();
             
+
+            //Test.TestLessThanOne();
+            //Test.TestMoreThanOne();
+            //Test.TestPointsZero();
+            //Test.TestPointsOne();
+            //Test.TestArray();
+            Test.TestIntegrationNegative();
+            Test.TestIntegrationPositiv();            
 
         }
     }

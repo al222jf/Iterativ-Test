@@ -39,8 +39,9 @@ namespace Testkod
             {
                 if (value < 1)
                 {
-                    throw new ArgumentException("Måste vara minst en dommare!");
+                    throw new ArgumentException("FEL! Måste vara minst en domare!");
                 }
+
                 _quantityOfPoints = value;
             }
         }
@@ -50,22 +51,19 @@ namespace Testkod
         public void SavePoints(int points)
         {
 
+            if (points < 1)
+            {
+                throw new ArgumentException("FEL! Poängen måste vara mer än noll");
+            }
             _pointsArray = new int[_quantityOfPoints];
             if (_pointsArray.Length > 0)
             {
                 for (int i = 0; i < _quantityOfPoints; i++)
                 {
-                    //Console.Write("Poäng {0}: ", i + 1);
-                    //points = int.Parse(Console.ReadLine());
-
-
-
                     _pointsArray[i] = 0;
-
-
                 }
             }
-            throw new ArgumentException("Poängen måste vara mer än noll");
         }
+       
     }
 }

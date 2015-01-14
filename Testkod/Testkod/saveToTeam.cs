@@ -17,7 +17,7 @@ namespace Testkod
         public void save(double avragePoints)
         {
             teamSave.Add(avragePoints);
-
+            
             //Skriver ut listan
             foreach (var saves in teamSave)
             {
