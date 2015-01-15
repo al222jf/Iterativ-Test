@@ -21,8 +21,7 @@ namespace Testkod
             try
             {
                 quantity.GetQuantity = 0;
-                string fail = "TestLessThanOne lyckades inte";
-                TrueOrFalse(fail, false);
+                TrueOrFalse("TestLessThanOne misslyckades", false);
             }
             catch (ArgumentException err)
             {
@@ -38,8 +37,7 @@ namespace Testkod
             try
             {
                 quantity.GetQuantity = 2;
-                string success = "Godkänt! Antal domare är mer än 1";
-                TrueOrFalse(success, true);
+                TrueOrFalse("Godkänt! Antal domare är mer än 1", true);
             }
             catch (ArgumentException err)
             {
@@ -55,8 +53,7 @@ namespace Testkod
             try
             {
                 points.SavePoints(0);
-                string fail = "TestPointsZero lyckades inte";
-                TrueOrFalse(fail, false);
+                TrueOrFalse("TestPointsZero misslyckades", false);
             }
             catch (ArgumentException err)
             {
@@ -72,12 +69,143 @@ namespace Testkod
             try
             {
                 points.SavePoints(1);
-                string success = "Godkänt! poängen är mer än 1";
-                TrueOrFalse(success, true);
+                TrueOrFalse("Godkänt! poängen är mer än 1", true);
             }
             catch (ArgumentException err)
             {
                 TrueOrFalse(err.Message, true);
+            }
+        }
+
+        //Skickar tomt användarnamn
+        public static void TestUserEmpty()
+        {
+            var user = new Login();
+
+            try
+            {
+                user.User = "";
+                TrueOrFalse("TestUserEmpty misslyckades!", false);
+            }
+            catch (ArgumentException err)
+            {
+                TrueOrFalse(err.Message, false);
+            }
+        }
+
+        //Skickar sträng till get, set metoden
+        public static void TestUserString()
+        {
+            var user = new Login();
+
+            try
+            {
+                user.User = "stefan";
+                TrueOrFalse("TestUserString lyckades", true);
+            }
+            catch (ArgumentException err)
+            {
+                TrueOrFalse(err.Message, false);
+            }
+        }
+
+        //Skickar fel användarnamn
+        public static void TestUserFalse()
+        {
+            var user = new Login();
+            user.User = "fel";
+
+            try
+            {
+                user.UserValidate();
+                TrueOrFalse("TestUserFalse misslyckades!", false);
+            }
+            catch (ArgumentException err)
+            {
+                TrueOrFalse(err.Message, false);
+            }
+        }
+
+        //Skickar rätt användarnamn
+        public static void TestUserTrue()
+        {
+            var user = new Login();
+            user.User = "stefan";
+
+            try
+            {
+                user.UserValidate();
+                TrueOrFalse("Rätt användarnamn!", true);
+            }
+            catch (ArgumentException err)
+            {
+                TrueOrFalse(err.Message, false);
+            }
+        }
+
+        //Skickar ett tomt lösenord
+        public static void TestPasswordEmpty()
+        {
+            var password = new Login();
+
+            try
+            {
+               password.Password = "";
+               TrueOrFalse("TestPasswordEmpty misslyckades!", false);
+            }
+            catch(ArgumentException err)
+            {
+                TrueOrFalse(err.Message, false);
+            }            
+        }
+        
+        //Skickar med sträng till get,set metoden
+        public static void TestPasswordString()
+        {
+            var password = new Login();
+
+            try
+            {
+                password.Password = "rules";
+                TrueOrFalse("TestPasswordString lyckades", true);
+            }
+            catch (ArgumentException err)
+            {
+                TrueOrFalse(err.Message, false);
+            }
+        }
+
+        //Skickar fel lösenord
+        public static void TestPasswordFalse()
+        {
+            var password = new Login();
+            password.Password = "fel";
+           
+            try
+            {
+                password.PasswordValidate();
+                TrueOrFalse("TestpasswordFalse misslyckades!", false);
+            }
+            catch (ArgumentException err)
+            {
+                TrueOrFalse(err.Message, false);
+            }
+        }
+
+        //Skickar rätt lösenord
+        public static void TestPasswordTrue()
+        {
+            var password = new Login();
+            password.Password = "rules";
+
+            try
+            {
+                password.PasswordValidate();
+                TrueOrFalse("Rätt Lösenord", true);
+            }
+            catch (ArgumentException err)
+            {
+                TrueOrFalse(err.Message, false);
             }
         }
 
@@ -106,8 +234,7 @@ namespace Testkod
             try
             {
                 b.ProcessAverage(a);
-                string fail = "TestIntegrationNegative lyckades inte";
-                TrueOrFalse(fail, false);
+                TrueOrFalse("TestIntegrationNegative misslyckades", false);
 
             }
             catch (ArgumentException err)
@@ -126,8 +253,7 @@ namespace Testkod
             try
             {
                 b.ProcessAverage(a);
-                string success = "Godkänt! poängen är mer än 1";
-                TrueOrFalse(success, true);
+                TrueOrFalse("Godkänt! poängen är mer än 1", true);
 
             }
             catch (ArgumentException err)
