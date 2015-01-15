@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Testkod
@@ -10,6 +11,28 @@ namespace Testkod
     {
         static void Main(string[] args)
         {
+
+            string hej = Console.ReadLine();
+
+            Regex regex = new Regex("^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,8}$");
+
+            Match match = regex.Match(hej);
+
+            if (match.Success)
+            {
+                Console.WriteLine("Matchar");
+            }
+            else
+            {
+                Console.WriteLine("Matchar inte");
+            }
+
+            
+            
+            
+            
+            
+            
             ////Poängsättning för ett lag och en gren
 
             //int quantityOfPoints;
@@ -35,8 +58,8 @@ namespace Testkod
             //Test.TestPointsZero();
             //Test.TestPointsOne();
             //Test.TestArray();
-            Test.TestIntegrationNegative();
-            Test.TestIntegrationPositiv();            
+            //Test.TestIntegrationNegative();
+            //Test.TestIntegrationPositiv();            
 
         }
     }
