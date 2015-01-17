@@ -11,7 +11,10 @@ namespace Testkod
     {
         static void Main(string[] args)
         {
+            string[] array = new string[18];
+            array[0] = "";
 
+            Console.WriteLine(array[0].Length);
 
             Test.TestLessThanOne();
             Test.TestMoreThanOne();
@@ -19,7 +22,7 @@ namespace Testkod
             Test.TestPointsOne();
             //Test.TestArray();
             Test.TestIntegrationNegative();
-            Test.TestIntegrationPositiv();   
+            Test.TestIntegrationPositiv();
             Test.TestPasswordEmpty();
             Test.TestPasswordString();
             Test.TestPasswordFalse();
@@ -28,6 +31,13 @@ namespace Testkod
             Test.TestUserString();
             Test.TestUserFalse();
             Test.TestUserTrue();
+            Test.TestInsertNameEmpty();
+            Test.TestInsertNameString();
+            Test.TestInsertSizeEmpty();
+            Test.TestInsertSizeInt();
+            Test.TestInsertTeamSize();
+            Test.TestInsertTeamNameNumber();
+            Test.TestInsertTeamNameString();
 
         }
     }

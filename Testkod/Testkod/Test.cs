@@ -209,6 +209,120 @@ namespace Testkod
             }
         }
 
+        //Skickar in en tom string till get, set metoden TeamName
+        public static void TestInsertNameEmpty()
+        {
+            var register = new RegisterTeams();
+
+            try
+            {
+                register.TeamName = "";
+                TrueOrFalse("TestInsertNameEmpty misslyckades!", false);
+            }
+            catch (ArgumentException err)
+            {
+                TrueOrFalse(err.Message, false);
+            }
+        }
+
+        //Skickar in en sträng till get, set metoden TeamName
+        public static void TestInsertNameString()
+        {
+            var register = new RegisterTeams();
+            
+            try
+            {
+                register.TeamName = "blågul";
+                TrueOrFalse("TestInsertNameString Lyckades", true);
+            }
+            catch (ArgumentException err)
+            {
+                TrueOrFalse(err.Message, false);
+            }
+        }
+
+        //Skickar in en 0 till get, set metoden TeamSize
+        public static void TestInsertSizeEmpty()
+        {
+            var register = new RegisterTeams();
+
+            try
+            {
+                register.TeamSize = 0;
+                TrueOrFalse("TestInsertSizeEmpty misslyckades!", false);
+            }
+            catch (ArgumentException err)
+            {
+                TrueOrFalse(err.Message, false);
+            }
+        }
+
+        //Skickar in en 5 till get, set metoden TeamSize
+        public static void TestInsertSizeInt()
+        {
+            var register = new RegisterTeams();
+
+            try
+            {
+                register.TeamSize = 5;
+                TrueOrFalse("TestInsertSizrInt lyckades", true);
+            }
+            catch (ArgumentException err)
+            {
+                TrueOrFalse(err.Message, false);
+            }
+        }
+
+        //Sätter storleken på laget till godkänt värde.
+        public static void TestInsertTeamSize()
+        {
+            var register = new RegisterTeams();
+            register.TeamSize = 5;
+            try
+            {
+                register.InsertTeamSize();
+            }
+            catch (ArgumentException err)
+            {
+                TrueOrFalse(err.Message, false);
+            }
+        }
+
+        //Sätter TeamName till string med siffror
+        public static void TestInsertTeamNameNumber()
+        {
+            var register = new RegisterTeams();
+            register.TeamName = "gul3lå";
+            try
+            {
+                register.InsertTeamName();
+                TrueOrFalse("TestInsertTeamNameNumber misslyckades!", false);
+            }
+            catch (ArgumentException err)
+            {
+                TrueOrFalse(err.Message, false);
+            }
+            
+        }
+
+        //Sätter TeamName till godkänd string
+        public static void TestInsertTeamNameString()
+        {
+            var register = new RegisterTeams();
+            register.TeamName = "gulblå";
+            register.TeamSize = 5;
+            register.TeamArray = new string[register.TeamSize];
+            try
+            {
+                register.InsertTeamName();
+                TrueOrFalse("TestInsertNameString lyckades!", true);
+            }
+            catch (ArgumentException err)
+            {
+                TrueOrFalse(err.Message, false);
+            }
+        }
+
         ////Skickar in en tom array.
         //public static void TestArray()
         //{
