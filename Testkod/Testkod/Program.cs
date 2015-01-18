@@ -11,16 +11,12 @@ namespace Testkod
     {
         static void Main(string[] args)
         {
-            string[] array = new string[18];
-            array[0] = "";
-
-            Console.WriteLine(array[0].Length);
+            
 
             Test.TestLessThanOne();
             Test.TestMoreThanOne();
             Test.TestPointsZero();
             Test.TestPointsOne();
-            //Test.TestArray();
             Test.TestIntegrationNegative();
             Test.TestIntegrationPositiv();
             Test.TestPasswordEmpty();
@@ -38,6 +34,8 @@ namespace Testkod
             Test.TestInsertTeamSize();
             Test.TestInsertTeamNameNumber();
             Test.TestInsertTeamNameString();
+            Test.TestInsertCompetitorsEmpty();
+            Test.TestInsertCompetitorsFull();
 
         }
     }

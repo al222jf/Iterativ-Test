@@ -10,7 +10,6 @@ namespace Testkod
     {
         private string _teamName;
         private int _teamSize;
-        private List<string> _teamList;
         private string[] _teamArray;
 
         public string TeamName
@@ -67,8 +66,16 @@ namespace Testkod
 
         public void InsertCompetitors()
         {
-
+            for (var i = 0; i < _teamArray.Length; i++)
+            {
+                if (_teamArray[i].Length < 1)
+                {
+                    throw new ArgumentException("Alla namn är inte ifyllda!");
+                }
+            }
         }
+
+
         public RegisterTeams()
         {
             

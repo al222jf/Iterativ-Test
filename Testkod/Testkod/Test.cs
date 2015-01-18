@@ -323,6 +323,56 @@ namespace Testkod
             }
         }
 
+        public static void TestInsertCompetitorsEmpty()
+        {
+            var register = new RegisterTeams();
+            register.TeamArray = new string[4];
+
+            for (var i = 0; i < register.TeamArray.Length; i++)
+            {
+                if (i == 2)
+                {
+                    register.TeamArray[i] = "";
+                }
+                else
+                {
+                    register.TeamArray[i] = "blågul";
+                }
+               
+            }
+
+            try
+            {
+                register.InsertCompetitors();
+                TrueOrFalse("TestInsertCompetitorsEmpty misslyckades", false);
+            }
+            catch (ArgumentException err)
+            {
+                TrueOrFalse(err.Message, false);
+            }
+        }
+
+        public static void TestInsertCompetitorsFull()
+        {
+            var register = new RegisterTeams();
+            register.TeamArray = new string[4];
+
+            for (var i = 0; i < register.TeamArray.Length; i++)
+            {
+                register.TeamArray[i] = "blågul";
+            }
+
+            try
+            {
+                register.InsertCompetitors();
+                TrueOrFalse("TestInsertCompetitorsFull lyckades", true);
+            }
+            catch (ArgumentException err)
+            {
+                TrueOrFalse(err.Message, false);
+            }
+        }
+
         ////Skickar in en tom array.
         //public static void TestArray()
         //{
@@ -372,7 +422,7 @@ namespace Testkod
             }
             catch (ArgumentException err)
             {
-                Console.WriteLine(err.Message);
+                TrueOrFalse(err.Message, false);
             }
 
         }
